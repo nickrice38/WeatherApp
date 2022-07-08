@@ -11,6 +11,11 @@
 		C40123652873752C00C6AE3B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40123642873752C00C6AE3B /* ContentView.swift */; };
 		C40123672873752E00C6AE3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C40123662873752E00C6AE3B /* Assets.xcassets */; };
 		C401236A2873752E00C6AE3B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C40123692873752E00C6AE3B /* Preview Assets.xcassets */; };
+		C420EC7F28774B08005586CD /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C420EC7E28774B08005586CD /* TabBar.swift */; };
+		C420EC8128774D16005586CD /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C420EC8028774D16005586CD /* Shapes.swift */; };
+		C420EC8428775027005586CD /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = C420EC8328775027005586CD /* BottomSheet */; };
+		C420EC8628775295005586CD /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C420EC8528775295005586CD /* ForecastView.swift */; };
+		C420EC882877553F005586CD /* Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = C420EC872877553F005586CD /* Blur.swift */; };
 		C42330532874AB790045F901 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42330522874AB790045F901 /* Extensions.swift */; };
 		C42330552874ABB70045F901 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42330542874ABB70045F901 /* HomeView.swift */; };
 /* End PBXBuildFile section */
@@ -21,6 +26,10 @@
 		C40123642873752C00C6AE3B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C40123662873752E00C6AE3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C40123692873752E00C6AE3B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C420EC7E28774B08005586CD /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		C420EC8028774D16005586CD /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		C420EC8528775295005586CD /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		C420EC872877553F005586CD /* Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blur.swift; sourceTree = "<group>"; };
 		C42330522874AB790045F901 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C42330542874ABB70045F901 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -30,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C420EC8428775027005586CD /* BottomSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				C42330522874AB790045F901 /* Extensions.swift */,
+				C420EC8028774D16005586CD /* Shapes.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -111,6 +122,7 @@
 		C423304D2874AA5D0045F901 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				C420EC7E28774B08005586CD /* TabBar.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -118,6 +130,7 @@
 		C423304E2874AA640045F901 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				C420EC8528775295005586CD /* ForecastView.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -125,6 +138,7 @@
 		C423304F2874AA680045F901 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C420EC872877553F005586CD /* Blur.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -145,6 +159,9 @@
 			dependencies = (
 			);
 			name = WeatherApp;
+			packageProductDependencies = (
+				C420EC8328775027005586CD /* BottomSheet */,
+			);
 			productName = WeatherApp;
 			productReference = C401235F2873752C00C6AE3B /* WeatherApp.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +190,9 @@
 				Base,
 			);
 			mainGroup = C40123562873752C00C6AE3B;
+			packageReferences = (
+				C420EC8228775027005586CD /* XCRemoteSwiftPackageReference "BottomSheet" */,
+			);
 			productRefGroup = C40123602873752C00C6AE3B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -201,8 +221,12 @@
 			files = (
 				C40123652873752C00C6AE3B /* ContentView.swift in Sources */,
 				C42330552874ABB70045F901 /* HomeView.swift in Sources */,
+				C420EC882877553F005586CD /* Blur.swift in Sources */,
 				C42330532874AB790045F901 /* Extensions.swift in Sources */,
 				C40123632873752C00C6AE3B /* WeatherAppApp.swift in Sources */,
+				C420EC8628775295005586CD /* ForecastView.swift in Sources */,
+				C420EC7F28774B08005586CD /* TabBar.swift in Sources */,
+				C420EC8128774D16005586CD /* Shapes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +429,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C420EC8228775027005586CD /* XCRemoteSwiftPackageReference "BottomSheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Wouter125/BottomSheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C420EC8328775027005586CD /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C420EC8228775027005586CD /* XCRemoteSwiftPackageReference "BottomSheet" */;
+			productName = BottomSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C40123572873752C00C6AE3B /* Project object */;
 }

@@ -6,39 +6,63 @@
 //
 
 import SwiftUI
+import BottomSheet
+
+enum BottomSheetPosition: CGFloat, CaseIterable {
+    case top = 0.83 // 702/844
+    case middle = 0.385 // 325/844
+}
 
 struct HomeView: View {
+    @State var bottomSheetPosition: BottomSheetPosition = .middle
+    
     var body: some View {
-        ZStack {
-            // MARK: Background Color
-            Color.background
-                .ignoresSafeArea()
-            
-            // MARK: Background Image
-            Image("Background")
-                .resizable()
-                .ignoresSafeArea()
-            
-            // MARK: House Image
-            Image("House")
-                .frame(maxHeight: .infinity, alignment: .top)
-                .padding(.top, 257)
-            
-            // MARK: Current Weather
-            VStack(spacing: -10) {
-                Text("Montreal")
-                    .font(.largeTitle)
+        NavigationView {
+            ZStack {
+                // MARK: Background Color
+                Color.background
+                    .ignoresSafeArea()
                 
-                VStack {
-                    Text(attributedString)
+                // MARK: Background Image
+                Image("Background")
+                    .resizable()
+                    .ignoresSafeArea()
+                
+                // MARK: House Image
+                Image("House")
+                    .frame(maxHeight: .infinity, alignment: .top)
+                    .padding(.top, 257)
+                
+                // MARK: Current Weather
+                VStack(spacing: -10) {
+                    Text("Montreal")
+                        .font(.largeTitle)
                     
-                    Text("H:24°   L:18°")
-                        .font(.title3.weight(.semibold))
+                    VStack {
+                        Text(attributedString)
+                        
+                        Text("H:24°   L:18°")
+                            .font(.title3.weight(.semibold))
+                    }
+                    
+                    Spacer()
                 }
+                .padding(.top, 51)
                 
-                Spacer()
+                // MARK: Bottom Sheet
+                BottomSheetView(position: $bottomSheetPosition) {
+//                    Text(bottomSheetPosition.rawValue.formatted())
+                } content: {
+                    ForecastView()
+                }
+
+                
+                // MARK: Tab Bar
+                TabBar(action: {
+                    bottomSheetPosition = .top
+                })
             }
-            .padding(.top, 51)
+            .navigationBarHidden(true)
         }
     }
     
